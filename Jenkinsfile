@@ -70,15 +70,15 @@ pipeline {
       stage('Run Container') {
             steps {
                 sh '''
-                    # Stop and remove existing container if it exists
+                    docker pull $MY_DOCKER_USER/restapi
+
                     docker rm -f $CONTAINER_NAME || true
 
-                    # Run new container in detached mode
-                    docker run -d --name $CONTAINER_NAME -p $PORT_MAPPING $IMAGE_NAME
+                    docker run -d --name $CONTAINER_NAME -p $PORT_MAPPING $MY_DOCKER_USER/restapi
 
                     # Optional: wait for container to be healthy/ready
                     sleep 5
-                    docker ps | grep $CONTAINER_NAME
+                    docker ps | grep $MY_DOCKER_USER/restapi
                 '''
             }
         }
