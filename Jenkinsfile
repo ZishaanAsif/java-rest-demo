@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ZishaanAsif/java-rest-demo'
+                git branch: 'main', url: 'https://github.com/ZishaanAsif/java-rest-demo.git'
             }
         }
 
