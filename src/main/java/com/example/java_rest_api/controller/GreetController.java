@@ -8,7 +8,7 @@ public class GreetController {
 
     @GetMapping("/welcome")
     public String getMessage(){
-        return "<h1>  Hello from Spring Rest Controller: Auto deployed~2 </h1>";
+        return "<h1>  Hello from Spring Rest Controller: Auto deployed~3 </h1>";
     }
 
 }
